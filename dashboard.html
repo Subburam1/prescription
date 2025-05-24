@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Existing styles remain unchanged */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-image: url("uu.jpg");
+            color: #ffffff;
+            padding: 25px 0;
+            text-align: left;
+            width: 100%;
+            height: 184px;
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin-left: 30px;
+            font-size: 3em;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+        }
+
+        header .logo {
+            margin-right: 100px;
+            height: 150px;
+            width: 150px;
+        }
+
+        nav {
+            background: linear-gradient(#6441A5, #2a0845);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 0px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav a {
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: #004d40;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 95%;
+            width: 100%;
+            margin-top: 30px;
+            line-height: 1.9;
+            color: #555555;
+            font-size: 1.15em;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            position: absolute;
+            top: 250px;
+            left: 2.5%;
+            z-index: 0;
+        }
+
+        .content.active {
+            opacity: 1;
+            transform: translateY(0);
+            z-index: 1;
+        }
+
+        .content h2 {
+            color: #34495e;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            padding-bottom: 10px;
+            width: 60%;
+        }
+
+        .content p {
+            line-height: 1.9;
+            margin-bottom: 20px;
+            color: #666666;
+            font-size: 1.1em;
+            width: 60%;
+        }
+
+        .content img {
+            width: 350px;
+            height: 300px;
+            margin-left: 1100px;
+            margin-top: -1300px;
+            margin-bottom: 110px;
+        }
+
+        #project-description {
+            display: block;
+        }
+
+        #team-members {
+            display: block;
+        }
+
+        #dashboard {
+            display: block;
+        }
+
+        #team-members img {
+            width: 370px;
+            height: 370px;
+            margin-left: 1100px;
+            margin-bottom: 400px;
+            margin-right: -2000px;
+        }
+
+        #team-members h2 {
+            width: 100%;
+            margin-top: 70px;
+            margin-left: 50px;
+        }
+        
+        #team-members p {
+            margin-left: 50px;
+            font-size: 1.4em;
+        }
+        
+        #dashboard-container {
+            width: 100%;
+            height: 800px;
+            border: none;
+            margin-top: 20px;
+        }
+        
+        .dashboard-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .dashboard-fallback {
+            display: none;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prescription analysis</h1>
+        <img class="logo" src="logo.png" alt="Company Logo">
+    </header>
+    <nav>
+        <a href="#" data-target="project-description" class="active">Project Description</a>
+        <a href="#" data-target="team-members">Team members</a>
+        <a href="#" data-target="dashboard">Dashboard</a>
+    </nav>
+    
+    <div id="team-members" class="content">
+        <h2>Team members</h2>
+        <p>
+            RITHICK S (Team lead & Dashboard Creator) <br>
+            SUBBURAM V (Data Collector & Analyzer) <br>
+            NAVEEN KUMAR P(PROS & CONS)<br>
+
+            <strong>RITHICK S</strong> is the <b>Team Lead</b> and <b>Dashboard Creator</b> for this project. He is responsible for coordinating the team efforts and creating the final dashboard. <br><br>
+
+            <strong>SUBBURAM V</strong> is the <b>Data Collector</b> and <b>Analyzer</b>. He is in charge of gathering the necessary data and performing the analysis to provide insights for the dashboard. <br><br>
+
+            <strong>NAVEEN KUMAR P</strong> is responsible for identifying the Pros and Cons of the project. He analyzes the advantages and disadvantages to help in decision-making.
+        </p>
+        <img src="boys.AVIF" alt="Team Members Image">
+    </div>
+    
+    <div id="project-description" class="content active">
+        <h2>Project Description</h2>
+        <p>
+            Our project, Prescription Analysis Dashboard, is a web-based analytics system designed to visualize
+            and analyze medical prescription data effectively. The platform provides insights into doctors'
+            prescription behaviors, hospital performance, and drug popularity trends. Users can interact
+            with various visual charts such as bar graphs, pie charts, stacked bars, and maps to understand
+            patterns clearly. Filters based on doctor names, hospitals, and cities help in narrowing down the
+            data for deeper exploration. The dashboard enables healthcare teams to identify top-prescribing
+            doctors, most prescribed drugs, and regional performance with real-time filtering.
+            Additionally, the system includes a secure login page to ensure only authorized users can
+            access the dashboard. This tool aids in decision-making, resource allocation,
+            and improving prescription practices in healthcare facilities.
+        </p>
+        <img src="dess.WEBP" alt="Project Description Image">
+    </div>
+    
+    <div id="dashboard" class="content">
+        <h2>Dashboard</h2>
+        <div id="dashboard-container">
+            <iframe 
+                src="https://us1.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2Frithik%2Bdashboard&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard&amp;subView=model00000196b5c82923_00000000" 
+                width="100%" 
+                height="800px" 
+                frameborder="0" 
+                scrolling="yes" 
+                allowfullscreen
+                onload="iframeLoaded(this)"
+                onerror="iframeError(this)"
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        function iframeLoaded(iframe) {
+            console.log('Dashboard loaded successfully');
+            const fallback = document.querySelector('.dashboard-fallback');
+            fallback.style.display = 'none';
+        }
+
+        function iframeError(iframe) {
+            console.log('Dashboard failed to load');
+            const fallback = document.querySelector('.dashboard-fallback');
+            fallback.style.display = 'block';
+        }
+
+        const navLinks = document.querySelectorAll('nav a');
+        const contentDivs = document.querySelectorAll('.content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                contentDivs.forEach(contentDiv => {
+                    contentDiv.classList.remove('active');
+                });
+
+                const targetId = this.getAttribute('data-target');
+                const targetDiv = document.getElementById(targetId);
+                targetDiv.classList.add('active');
+
+                if (targetId === 'dashboard') {
+                    const iframe = document.querySelector('iframe');
+                    const fallback = document.querySelector('.dashboard-fallback');
+
+                    iframe.src = iframe.src;
+
+                    setTimeout(() => {
+                        if (!iframe.contentDocument || iframe.contentDocument.body.children.length === 0) {
+                            fallback.style.display = 'block';
+                        }
+                    }, 3000);
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialActive = document.querySelector('nav a.active');
+            if (initialActive && initialActive.getAttribute('data-target') === 'dashboard') {
+                const iframe = document.querySelector('iframe');
+                const fallback = document.querySelector('.dashboard-fallback');
+
+                setTimeout(() => {
+                    if (!iframe.contentDocument || iframe.contentDocument.body.children.length === 0) {
+                        fallback.style.display = 'block';
+                    }
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

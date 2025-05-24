@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Prescription Insights - LeoDass Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.63;
+            background-color:white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333; /* Ensure default text color for body */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background:linear-gradient(#43C6AC, #F8FFAE);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex; /* Ensures the image inside is treated as flex item for alignment */
+            align-items: center; /* Vertically aligns the image */
+        }
+
+        .logo img {
+            max-height: 1000px; /* Ensures image doesn't exceed a certain height, adjust as needed */
+            width: 180px; /* Set a specific width for the logo */
+            height: 180px; /* Maintain aspect ratio */
+            display: block; /* Removes any extra space below the image */
+            margin-left:500px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff; /* Changed nav link color to white for better contrast against gradient */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ddd; /* Light grey on hover */
+        }
+
+        /* Header Buttons (How It Works, About Us, Login) */
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between nav and login button */
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #fff; /* White border */
+            color: #fff;
+            box-shadow: none;
+            padding: 10px 25px; /* Slightly smaller padding for header button */
+            border-radius: 5px; /* Added border-radius for consistency */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white on hover */
+            color: #fff;
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            flex-grow: 1; /* Allows it to take available space */
+            display: flex;
+            align-items: center; /* Centered vertically */
+            justify-content: center; /* Centered horizontally */
+            padding: 60px 0; /* Standard vertical padding */
+            background: white; /* Consistent white background */
+            overflow: hidden; /* Hide overflowing parts of the image */
+        }
+
+        .hero-content {
+            flex: 1; /* Allow it to take available space */
+            padding-right: 40px; /* Standard padding to the right of content */
+            text-align: left;
+            max-width: 650px; /* Adjusted max-width for better text flow and reduced height */
+        }
+
+        .hero-content h1 {
+            font-size: 3.2em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 15px; /* Adjusted margin for better spacing between paragraphs */
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #6a5acd; /* Medium purple */
+            color: #fff;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05em;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: #483d8b; /* Darker purple on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Key for image positioning on the right */
+        .hero-image {
+            flex: 1;
+            min-width: 500px; /* Ensure image area has a minimum width on desktop */
+            height: 500px; /* Or adjust based on your image's aspect ratio */
+            background-image: url('pre.WEBP'); /* <--- YOUR IMAGE PATH HERE */
+            background-size: contain; /* Ensures the entire image fits */
+            background-position: center right; /* This positions the image to the right */
+            background-repeat: no-repeat;
+            padding-left: 20px;
+            margin-left: 20px;; /* Add some padding to separate from content */
+        }
+
+        /* New Content Section: Features */
+        .features-section {
+            background-color: white; /* Light grey background */
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .features-section h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-card .icon {
+            font-size: 3em;
+            color: #6a5acd; /* Icon color matching primary button */
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* Footer Styles */
+        .footer {
+            background:linear-gradient(#43C6AC,#F8FFAE);/* Dark background for footer */
+            padding: 30px 0;
+            text-align: center;
+            font-size: 1.9em;
+            margin-top: auto; /* Pushes footer to the bottom */
+        }
+
+        .footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 1000px) {
+            .hero-section {
+                flex-direction: column; /* Stacks content and image vertically */
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                padding-bottom: 40px;
+                max-width: 2000%; /* Allows full width on smaller screens */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-content p {
+                font-size: 2.5em;
+            } 
+
+            .hero-image {
+                max-width: 1000px; /* Allow width to adjust */
+                width: 300px; /* Image takes full width of its container */
+                height: 300px; /* Adjust height for smaller screens */ /* Center image on smaller screens */
+                padding-left: 60px; /* Remove padding when stacked */
+                margin-left: 1000px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-buttons {
+                margin-top: 15px;
+                width: auto; /* Reverted this from 300% */
+                justify-content: flex-start;
+                gap: 10px;
+            }
+
+            nav ul {
+                margin-top: 0; /* Reset margin as it's part of header-buttons now */
+                flex-direction: column;
+                align-items: flex-start;
+                width: auto; /* Allow nav links to take full width if needed */
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr; /* Stack features vertically on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2em;
+            }
+
+            .hero-image {
+                height: 250px; /* Further adjust height for smaller screens */
+            }
+             /* Corrected image width on mobile */
+            .hero-image {
+                width: 100%; 
+                margin-left: 1000px;
+                margin-right: 1900px;/* Ensure image takes full width of its container on smaller screens */
+            }
+
+
+            .btn, .btn-secondary {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .features-section h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8em;
+            }
+            .hero-content p {
+                font-size: 0.95em;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.95em;
+            }
+
+            .header-buttons {
+                flex-direction: column; /* Stack nav and login button on very small screens */
+                align-items: center;
+            }
+             nav ul {
+                align-items: center; /* Center nav items when stacked */
+            }
+             nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Company Logo"> </a>
+            <div class="header-buttons">
+                <nav>
+                    <ul>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            <div class="hero-content">
+                <h1>Prescription Analysis</h1>
+                <p>Leverage AI-powered analysis to identify potential drug interactions, optimize dosages, and enhance patient safety with unparalleled accuracy and speed. Our cutting-edge system provides a comprehensive solution for modern healthcare challenges.</p>
+                <p>Our advanced algorithms process vast amounts of pharmacological data to provide clinicians with actionable insights in real-time. This robust data processing capability ensures that every prescription is thoroughly vetted for potential risks.</p>
+                <a href="login.html" class="btn">Get Started</a>
+            </div>
+            <div class="hero-image">
+                </div>
+        </div>
+    </main>
+
+    <section class="features-section">
+        <div class="container">
+            <h2>Key Features of Our Analysis</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Advanced Drug Interaction Detection</h3>
+                    <p>Our system meticulously analyzes prescriptions to identify potential adverse drug interactions, ensuring safer medication regimens.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Dosage Optimization & Alerts</h3>
+                    <p>Receive intelligent recommendations for dosage adjustments and alerts for potential under- or over-dosing based on patient data.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Enhanced Patient Safety</h3>
+                    <p>Minimize medication errors and improve patient outcomes through comprehensive, AI-driven prescription validation.</p>
+                </div>
+                 <div class="feature-card">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <h3>Real-time Processing</h3>
+                    <p>Get instant analysis results, allowing for quick decision-making in fast-paced healthcare environments.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-database"></i></div>
+                    <h3>Comprehensive Drug Database</h3>
+                    <p>Utilizes an extensive and regularly updated database of medications, conditions, and known interactions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Data Privacy & Compliance</h3>
+                    <p>Built with patient data privacy and regulatory compliance (e.g., HIPAA) at its core, ensuring secure operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 LeoDass Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

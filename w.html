@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prescription Analysis Flow</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+    .mermaid { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+<h2>Prescription Analysis Workflow Diagram</h2>
+
+<div class="mermaid">
+graph TD
+    A[📥 Input: Prescription Dataset (.csv)] --> B[🔎 Select (SPSS Modeler)]
+    A --> C[📊 Aggregate (Excel)]
+    A --> D[🧹 Filter Nulls (Excel)]
+    B --> E[🧮 Field Type Assignment]
+    C --> E
+    D --> E
+    E --> F[📌 Partition Data (Train/Test)]
+    F --> G[🌳 Model: Decision Tree]
+    F --> H[📈 Model: Regression]
+    G --> I[📋 Evaluation Node]
+    H --> I
+    I --> J[📤 Export Model Output]
+    J --> K[📊 Dashboard in IBM Cognos]
+    K --> L[📎 User Filtering & Drilldown]
+    L --> M[📍 Insights & Trend Analysis]
+    M --> N[✅ End: Business Decision Support]
+</div>
+</body>
+</html>
