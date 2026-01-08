@@ -115,14 +115,13 @@ cd prescription
 
 ```
 prescription/
-├── index.html           # Main landing page
+├── index.html           # Main landing page with feature highlights
 ├── login.html           # Login page for secure access
 ├── dashboard.html       # Main dashboard page with analytics
-├── w.html              # Additional page
-├── launch.json         # Configuration file
-├── logo.png            # Company logo
-├── boys.avif           # Team image
-└── WhatsApp Image...   # Project screenshots/images
+├── w.html              # Prescription analysis workflow diagram
+├── launch.json         # VS Code debug configuration
+├── boys.avif           # Team members image
+└── WhatsApp Image...   # Project screenshots and documentation images
 ```
 
 ## 🎯 Usage
